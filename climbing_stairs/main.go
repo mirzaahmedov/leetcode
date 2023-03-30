@@ -8,22 +8,19 @@ func main(){
   fmt.Println(climbStairs(3))
   fmt.Println(climbStairs(44))
 }
-func helper(count *int, n int) {
-  if n == 0 {
-    *count = *count + 1
-    return
-  }
-  if n < 0 {
-    return
-  }
-
-  helper(count, n - 1)
-  helper(count, n - 2)
-}
 func climbStairs(n int) int {
-  count := 0
+  table := make([]int, n + 1)
 
-  helper(&count, n)
+  if n < 3 {
+    return n
+  }
 
-  return count
+  table[1] = 1
+  table[2] = 2
+
+  for i := 3; i < n + 1; i++ {
+    table[i] = table[i - 1] + table[i - 2]
+  }
+
+  return table[n]
 }
