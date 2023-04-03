@@ -1,10 +1,4 @@
-# Golang Solutions For Leetcode Problems
+# LeetCode solutions in Go
 
-
-## Problems
-
-| Problem  | 
-|----------|
-| Problem  | 
-
-[![Leetcode Stats](https://leetcard.jacoblin.cool/mirzaahmedov?font=Dancing_Script&ext=activity)](https://leetcode.com/mirzaahmedov)
+### Stats
+[![KnlnKS's LeetCode stats](https://leetcode-stats-six.vercel.app/?username=mirzaahmedov)](https://leetcode.com/mirzaahmedov)
