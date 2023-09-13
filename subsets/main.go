@@ -16,13 +16,17 @@ func findSubsets(curr, nums []int) [][]int {
 	results := [][]int{curr}
 
 	for i := range nums {
-		s := append(curr, nums[i])
+		c := makeCopyAndAppend(curr, nums[i])
 
-		for _, r := range findSubsets(s, nums[i+1:]) {
-			fmt.Println(nums[i], r, results)
+		for _, r := range findSubsets(c, nums[i+1:]) {
 			results = append(results, r)
 		}
 	}
 
 	return results
+}
+func makeCopyAndAppend(list []int, a int) []int {
+	c := make([]int, len(list))
+	copy(c, list)
+	return append(c, a)
 }
