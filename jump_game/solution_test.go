@@ -4,29 +4,25 @@ import (
 	"testing"
 )
 
-func TestJumpGame(t *testing.T) {
+func TestCanJump(t *testing.T) {
 	tests := []struct {
 		input []int
-		want  int
+		want  bool
 	}{
 		{
 			input: []int{2, 3, 1, 1, 4},
-			want:  2,
+			want:  true,
 		},
 		{
-			input: []int{2, 3, 0, 1, 4},
-			want:  2,
-		},
-		{
-			input: []int{1, 2},
-			want:  1,
+			input: []int{3, 2, 1, 0, 4},
+			want:  false,
 		},
 	}
 
 	for i, tc := range tests {
-		got := jump(tc.input)
+		got := canJump(tc.input)
 		if got != tc.want {
-			t.Fatalf("#%d test - expected %d but got %d", i+1, tc.want, got)
+			t.Fatalf("#%d test - expected %v but got %v", i, tc.want, got)
 		}
 	}
 }

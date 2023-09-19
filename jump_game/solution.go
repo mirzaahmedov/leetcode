@@ -1,42 +1,22 @@
 package solution
 
-var (
-	memo = make(map[int]int)
+import (
+	"fmt"
 )
 
-func jump(nums []int) int {
-	if len(nums) == 1 {
-		return 0
-	}
-	return helper(nums, 0)
-}
-func helper(nums []int, j int) int {
-	min := 100000000000000
-
-	if len(nums) < 2 {
-		return 1
-	}
-	if len(nums) == 2 {
-		if nums[0] != 0 {
-			return 1
-		}
-		return 0
-	}
-
-	for i := 0; i <= nums[0]; i++ {
-		if val, ok := memo[j+i]; ok {
-			if val < min {
-				min = val
-			}
-			continue
+func canJump(nums []int) bool {
+	for i := 1; i < len(nums); i++ {
+		if i == len(nums)-1 && nums[0] == i {
+			return true
 		}
 
-		res := helper(nums[i+1:], j+i)
-		memo[j+i] = res
-		if res < min {
-			min = res
+		if nums[len(nums)-i] == i {
+			nums = nums[:len(nums)-i]
+			i = 0
 		}
+
+		fmt.Println(nums)
 	}
 
-	return min + 1
+	return false
 }
