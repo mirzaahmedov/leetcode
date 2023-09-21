@@ -17,6 +17,30 @@ func TestCanJump(t *testing.T) {
 			input: []int{3, 2, 1, 0, 4},
 			want:  false,
 		},
+		{
+			input: []int{1, 1, 1, 1},
+			want:  true,
+		},
+		{
+			input: []int{1, 1, 0, 1},
+			want:  false,
+		},
+		{
+			input: []int{0, 1},
+			want:  false,
+		},
+		{
+			input: []int{1, 2},
+			want:  true,
+		},
+		{
+			input: []int{1},
+			want:  true,
+		},
+		{
+			input: []int{0},
+			want:  true,
+		},
 	}
 
 	for i, tc := range tests {
