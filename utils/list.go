@@ -1,5 +1,7 @@
 package utils
 
+import "strconv"
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -35,4 +37,14 @@ func EqualList(head *ListNode, target *ListNode) bool {
 	}
 
 	return head == nil && target == nil
+}
+func PrintList(head *ListNode) string {
+	result := "["
+
+	for head != nil {
+		result += " " + strconv.Itoa(head.Val)
+		head = head.Next
+	}
+
+	return result + " ]"
 }
