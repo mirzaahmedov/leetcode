@@ -7,7 +7,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func GenerateList(nums []int) *ListNode {
+func GenerateLinkedListFromSlice(nums []int) *ListNode {
 	if len(nums) == 0 {
 		return nil
 	}
@@ -26,7 +26,7 @@ func GenerateList(nums []int) *ListNode {
 
 	return head
 }
-func EqualList(head *ListNode, target *ListNode) bool {
+func EqualLinkedLists(head *ListNode, target *ListNode) bool {
 	for head != nil && target != nil {
 		if head.Val != target.Val {
 			return false
@@ -38,7 +38,7 @@ func EqualList(head *ListNode, target *ListNode) bool {
 
 	return head == nil && target == nil
 }
-func PrintList(head *ListNode) string {
+func LinkedListToString(head *ListNode) string {
 	result := "["
 
 	for head != nil {
