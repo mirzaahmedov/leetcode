@@ -7,7 +7,7 @@ import (
 )
 
 func TestRotateRight(t *testing.T) {
-	tests := []struct {
+	testCases := []struct {
 		list *utils.ListNode
 		k    int
 		want *utils.ListNode
@@ -24,7 +24,7 @@ func TestRotateRight(t *testing.T) {
 		},
 	}
 
-	for i, tc := range tests {
+	for i, tc := range testCases {
 		got := rotateRight(tc.list, tc.k)
 		if !utils.EqualList(got, tc.want) {
 			t.Fatalf("#%d test - expected %v but got %v", i, utils.PrintList(tc.want), utils.PrintList(got))

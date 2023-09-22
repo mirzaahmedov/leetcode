@@ -5,7 +5,7 @@ import (
 )
 
 func TestUniquePaths(t *testing.T) {
-	tests := []struct {
+	testCases := []struct {
 		m    int
 		n    int
 		want int
@@ -22,9 +22,8 @@ func TestUniquePaths(t *testing.T) {
 		},
 	}
 	t.Run("Should return number of unique paths", func(t *testing.T) {
-		for _, tc := range tests {
+		for _, tc := range testCases {
 			got := uniquePaths(tc.m, tc.n)
-
 			if got != tc.want {
 				t.Fatalf("got %v but expected %v", got, tc.want)
 			}
